@@ -6,7 +6,7 @@ ul{
 	position: relative;
 	display: flex;
 	flex-direction: row;
-	gap: 220px;
+	gap: 250px;
 }
 li{
 	position: relative;
