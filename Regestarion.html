@@ -1,0 +1,67 @@
+<html>  
+
+<head>
+  <link rel="stylesheet" type="text/css" href="signupstyle.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+   <div>
+    <ul>
+      <li style="--clr:#00ade1">
+        <a href="Home.html" data-text="&nbsp;Home">&nbsp;Home&nbsp;</a>
+      </li>
+      <li style="--clr:#ff6492">
+        <a href="About.html" data-text="&nbsp;About">&nbsp;About&nbsp;</a>
+      </li>
+
+      <li style="--clr:#dc00d4">
+        <a href="Contact.html" data-text="&nbsp;Contact">&nbsp;Contact&nbsp;</a>
+      </li>
+    </ul>
+
+  </div>
+                                             
+  <main>
+    <div class="buttons login-button-active" data-action="animated">
+      <button class="login-button">
+				<span class="log-link login-button-active" data-action="animated">Sign In</span>
+				<span class="login-underline login-button-active" data-action="animated"></span>
+			</button>
+      <button class="signup-button">
+				<span class="sign-link" data-action="animated">Sign Up</span>
+				<span class="signup-underline login-button-active" data-action="animated"></span>
+			</button>
+    </div>
+    <div class="forms">
+      <form class="login-form login-button-active" action="#" method="post" data-action="animated">
+        <fieldset>
+          <legend>Please, enter your email and password for login.</legend>
+          <label for="login-email">E-mail</label>
+          <input id="login-email" type="email" name="email" required>
+          <label for="login-password">Password</label>
+          <input id="login-password" type="password" name="password" required>
+        </fieldset>
+        <input type="submit" value="Login">
+      </form>
+      <form class="signup-form" action="#" method="post" data-action="animated">
+        <fieldset>
+          <legend>Please, enter your email, password and password confirmation for sign up.</legend>
+          <label for="signup-email">E-mail</label>
+          <input id="signup-email" type="email" name="email" required>
+          <label for="signup-password">Password</label>
+          <input id="signup-password" type="password" name="password" required>
+          <label for="signup-confirm-password">Confirm password</label>
+          <input id="signup-confirm-password" type="password" name="password" required>
+        </fieldset>
+        <input type="submit" value="Welcome">
+      </form>
+    </div>
+    
+  </main>
+  </main>
+  <script src="regscript.js"></script> <!-- إضافة ملف JavaScript هنا -->
+  <div class="blob"></div>
+  </div>
+</body>
+  </html>
