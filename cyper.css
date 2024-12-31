@@ -1,0 +1,53 @@
+/* إعدادات الخطوط */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 20px;
+}
+
+h1 {
+    color: #5a67d8;
+}
+
+/* تخصيص استايل الفورم */
+form {
+    margin-top: 20px;
+}
+
+.input-group {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* زر نسخ النتائج */
+#copyButton {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* تحسين تنسيق الرسائل */
+#result p {
+    font-size: 1.2rem;
+}
+
+#result ul li {
+    font-size: 1.1rem;
+}
