@@ -1,13 +1,15 @@
 /* إعدادات الخطوط */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
     color: #333;
     padding: 20px;
+    animation: fadeIn 1s ease-in;
 }
 
 h1 {
-    color: #5a67d8;
+    color: #3a3a3a;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* تخصيص استايل الفورم */
@@ -18,6 +20,29 @@ form {
 .input-group {
     max-width: 600px;
     margin: 0 auto;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+/* تخصيص الأزرار */
+button {
+    border-radius: 25px;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
 }
 
 /* زر نسخ النتائج */
@@ -50,4 +75,20 @@ ul li {
 
 #result ul li {
     font-size: 1.1rem;
+}
+
+/* تأثيرات الحركة */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* أيقونات متحركة */
+.fas.fa-language {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
