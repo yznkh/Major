@@ -1,44 +1,72 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Document</title>
-  <link href="style.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الصفحة الرئيسية - إدارة القطاعات</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css?v=@DateTime.Now.Ticks" />
+    <link rel="stylesheet" href="~/Infra_ifnra.styles.css" asp-append-version="true" />
+    <style>
+        /* ... (الستايلات الموجودة) ... */
+    </style>
 </head>
-
 <body>
+    <div class="container text-right">
+        <header>
+            <h1>إدارة القطاعات والشركات</h1>
+            <div class="news-ticker">
+                <p>مديرية السياسات والامتثال / قسم البنى التحتية الحرجة</p>
+            </div>
+        </header>
+        <div>
+            <br />
+            <br />
+        </div>
+        <main class="my-4">
+            <div class="row">
+                @if (User.HasClaim("CanRead", "True"))
+                {
+                    <div class="card">
+                        <h2 class="card-title"><i class="fas fa-industry"></i> القطاعات</h2>
+                        <p>استعرض القطاعات الرئيسية والفرعية وأضف قطاعاً جديداً.</p>
+                        <a href="/Sectors" class="btn">عرض القطاعات</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title"><i class="fas fa-cogs"></i> الخدمات</h2>
+                        <p>استعرض الخدمات المقدمة لكل قطاع فرعي وأضف خدمة جديدة.</p>
+                        <a href="/Services" class="btn">عرض الخدمات</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title"><i class="fas fa-building"></i> الشركات</h2>
+                        <p>استعرض الشركات المسجلة وأضف شركة جديدة.</p>
+                        <a href="/Companies" class="btn">عرض الشركات</a>
+                    </div>
+                }
+                else
+                {
+                    <p class="text-danger text-center">غير مصرح لك بعرض أي محتوى.</p>
+                }
+            </div>
 
-  <div>
-       <ul>
-      <li style="--clr:#00ade1">
-        <a href="home.html" data-text="&nbsp;home">&nbsp;home&nbsp;</a>
-      </li>
-      <li style="--clr:#ff6492">
-        <a href="About.html" data-text="&nbsp;About">&nbsp;About&nbsp;</a>
-
-      </li>
-     
-
-      <li style="--clr:#dc00d4">
-        <a href="contact.html" data-text="&nbsp;Contact">&nbsp;Contact&nbsp;</a>
-      </li>
-    </ul>
-  </div>
-  <form id="form1"action="#">
-    <div class="container">
-      <div class="card">
-        <h1 class="title">Welcome</h1>
-        <p class="subtitle">
-        Welcome new website
-        </p>
-        <button class="btn" <a href="Regestarion.html">Try for Free</a> </button>   
-      </div>
-  </form>
-  <div class="blob"></div>
-  </div>
-
+            <div class="info-card">
+                <h2>معلومات البنية التحتية الحرجة</h2>
+                <ul style="color:black;">
+                    <li>تعريف البنية التحتية الحرجة: مجموعة الأنظمة والشبكات الإلكترونية والأصول المادية وغير المادية أو الأصول السيبرانية والأنظمة التي يعد تشغيلها المستمر ضرورة لضمان أمن الدولة واقتصادها وسلامة المجتمع.</li>
+                    <li>أهمية تحديد البنى التحتية الحرجة: المساعدة في وضع المعايير والضوابط الأمنية لحماية البنية التحتية الحرجة من ناحية، ومن ناحية أخرى المساعدة على تصنيف الحوادث السيبرانية وآلية الاستجابة لها.</li>
+                    <li>
+                        المعايير الأساسية لتصنيف القطاع الحرج:
+                        <ol>
+                            <li>أمن الدولة.</li>
+                            <li>الاقتصاد.</li>
+                            <li>سلامة المجتمع.</li>
+                        </ol>
+                    </li>
+                    <li>السند القانوني: قانون الأمن السيبراني رقم 16 لسنة 2019 والتي نصت على: "ب- يتولى المركز في سبيل تحقيق أهدافه المهام والصلاحيات التالية: 10. تحديد شبكات البنى التحتية الحرجة ومتطلبات استدامتها".</li>
+                </ul>
+            </div>
+        </main>
+    </div>
 </body>
-
 </html>
