@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - إدارة القطاعات</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css?v=@DateTime.Now.Ticks" />
+    <link rel="stylesheet" href="~/Infra_ifnra.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/c" rel="stylesheet">
+@*     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> *@
+   <style>
+
+        .container{
+            width:100%;
+        }
+        .ms-auto:hover {
+            transform: scale(1.2); /* Enlarge by 20% on hover */
+        }
+
+        .footer[b-ahaywf3c20] {
+            position: relative;
+            bottom: -59px;
+            padding-top: .5rem !important;
+            padding-bottom: .5rem !important;
+        }
+
+
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+    <header style="position:sticky;" class="custom-header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+             
+
+                <img src="/Image/Logo.png" alt="Logo" class="ms-auto" style="height: 60px; margin-left: 15px; transition: transform 0.3s ease;">
+               
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto d-flex justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fw-semibold" asp-area="" asp-controller="Home" asp-action="Index">
+                                <i class="fa-solid fa-house"></i> الرئيسية
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fw-semibold" asp-area="" asp-controller="Services" asp-action="Index">
+                                <i class="fa-solid fa-briefcase"></i> الخدمات
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fw-semibold" asp-area="" asp-controller="Companies" asp-action="Index">
+                                <i class="fa-solid fa-building"></i> الشركات
+                            </a>
+                        </li>
+                                              
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fw-semibold" asp-controller="Sectors" asp-action="Report">
+                                <i class="fas fa-chart-bar"></i> التقرير
+                            </a>
+                        </li>
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark fw-semibold" asp-controller="Users" asp-action="Register">
+                                    <i class="fa-solid fa-user-plus"></i> تسجيل مستخدم جديد
+                                </a>
+                            </li>
+                        }
+
+                        <li class="nav-item">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <a class="nav-link text-dark fw-semibold" asp-controller="Account" asp-action="Logout">
+                                    <i class="fa-solid fa-sign-out-alt"></i> تسجيل الخروج
+                                </a>
+                            }
+                            else
+                            {
+                                <a class="nav-link text-dark fw-semibold" asp-controller="Account" asp-action="Login">
+                                    <i class="fa-solid fa-sign-in-alt"></i> تسجيل الدخول
+                                </a>
+                            }
+                        </li>
+
+                    </ul>
+                    <a style="direction:ltr;" class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Index">
+                        <i class="fa-solid fa-building"></i> Welcome: @User.Identity?.Name
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container flex-grow-1 py-4">
+        @RenderBody()
+    </main>
+
+    <footer class="footer mt-auto bg-white shadow-sm py-3 text-center">
+        <p>&copy; @DateTime.Now.Year - جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
